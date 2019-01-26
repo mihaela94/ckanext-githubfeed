@@ -1,0 +1,7 @@
+
+        [ckan.plugins]
+        githubfeed=ckanext.githubfeed.plugin:GithubfeedPlugin
+
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+    
