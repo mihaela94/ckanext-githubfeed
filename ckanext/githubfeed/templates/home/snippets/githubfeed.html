@@ -1,0 +1,16 @@
+<div>Ultimele taskuri adaugate: </div>
+
+<ul>
+	{% for task in h.githubfeed_gettasks()[:3] %}
+		<li>
+			<a target="_blank" href="{{task['html_url']}}">
+				<img src="/github_logo.png" width="50px" height="50px">
+				{{task['title']}}
+			</a>
+		</li>
+	{% endfor %}
+</ul>
+
+<div>
+	<a target="_blank" href="{{ h.githubfeed_getallissuesurl }}">VEZI TOATE TASKURILE</a>
+</div>
