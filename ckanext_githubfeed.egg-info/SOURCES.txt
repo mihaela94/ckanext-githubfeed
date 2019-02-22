@@ -7,6 +7,7 @@ setup.py
 ckanext/__init__.py
 ckanext/githubfeed/__init__.py
 ckanext/githubfeed/plugin.py
+ckanext/githubfeed/templates/home/index.html
 ckanext/githubfeed/tests/__init__.py
 ckanext/githubfeed/tests/test_plugin.py
 ckanext_githubfeed.egg-info/PKG-INFO

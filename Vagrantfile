@@ -23,8 +23,8 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 5000, host: 5000
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 5000, host: 5002
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -77,10 +77,12 @@ Vagrant.configure("2") do |config|
     sudo mkdir /var/lib/ckan
     sudo chown -R vagrant:vagrant /var/lib/ckan
     sudo chown -R vagrant:vagrant /usr/lib/ckan
+    sudo chown -R vagrant:vagrant /usr/lib/ckan/default
     virtualenv --no-site-packages /usr/lib/ckan/default
     . /usr/lib/ckan/default/bin/activate
     pip install setuptools==36.1
     pip install -e 'git+https://github.com/ckan/ckan.git@ckan-2.8.2#egg=ckan'
+    pip install -e 'git+https://github.com/code4romania/ckanext-dataportaltheme#egg=ckanext-dataportaltheme'
     pip install -r /usr/lib/ckan/default/src/ckan/requirements.txt
     pip install flask_debugtoolbar
     cd /vagrant
