@@ -32,9 +32,9 @@ Activate virtualenv
 source /usr/lib/ckan/default/bin/activate
 ```
 
------------------
-Create admin user
------------------
+----------------------------
+Create admin user (optional)
+----------------------------
 ```
 paster --plugin=ckan sysadmin add admin -c /etc/ckan/default/development.ini
 ```
@@ -47,7 +47,7 @@ paster serve /etc/ckan/default/development.ini --reload
 ```
 
 
-Now you can access ckan instance on http://127.0.0.1:5000
+Now you can access ckan instance on http://127.0.0.1:5002
 
 # Happy Hacking :)
 
@@ -55,6 +55,10 @@ Now you can access ckan instance on http://127.0.0.1:5000
 [CKAN Docs](https://docs.ckan.org/en/2.8/)  
 [CKAN Extensions Tutorial](https://docs.ckan.org/en/2.8/extensions/tutorial.html)  
 [CKAN Theming guide](https://docs.ckan.org/en/2.8/theming/)
+
+# Extension templates
+
+In the main [theme extension](https://github.com/code4romania/ckanext-dataportaltheme) in `templates/home/index.html` we have created the `github_extension` block. This is the place where this extension will overwrite the template.
 
 # Resources
 [Add static pages extension example](https://github.com/okfn/ckanext-sa/blob/master/ckanext/sa/plugin.py)
