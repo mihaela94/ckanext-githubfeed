@@ -6,7 +6,11 @@ import json
 
 def gettasks(params = {'state': 'open'}):
 
-    url = toolkit.config.get('ckan.githubfeed.requesturl', 'https://api.github.com/repos/code4romania/data-portal/issues')
+    # print 'In gettasks'
+
+    url = toolkit.config.get('ckan.githubfeed.requesturl', 'https://api.github.com/repos/code4romania/ckanext-dataportaltheme/issues')
+
+    # print url
 
     r = requests.get(url=url, params=params)
 
@@ -26,7 +30,7 @@ class GithubfeedPlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
-        # toolkit.add_resource('fanstatic', 'githubfeed')
+        toolkit.add_resource('fantastic', 'githubfeed')
 
     def get_helpers(self):
         return {'githubfeed_gettasks': gettasks,
